@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  server:
+    build: ./server
+    ports:
+      - "9000:9000"
+    environment:
+      - NODE_ENV=development
+      - PORT=9000
+      - MONGO_URI=${DATABASE_URL}
+    volumes:
+      - ./server:/app
+    depends_on:
+      - client
+    env_file:
+    - ./server/.env
+
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_API_URL=http://localhost:9000/
+    volumes:
+      - ./client:/app
