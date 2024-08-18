@@ -90,7 +90,7 @@ const UserList: React.FC = () => {
         <div
           className={`flex overflow-scroll h-[75vh] ${
             isGridView ? "flex-wrap" : "flex-col"
-          } gap-3 justify-between`}
+          } gap-3 justify-start`}
         >
           {users.map((user: IUser) => {
             return (

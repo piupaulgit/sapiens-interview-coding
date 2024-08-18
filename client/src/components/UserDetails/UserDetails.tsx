@@ -15,7 +15,7 @@ const UserDetails: React.FC<IUserDetailsProps> = ({
   const avatarColor = getRandomColor();
   return (
     <div
-      className={`p-4 bg-gray-100 rounded-lg border-1 ${
+      className={`p-4 bg-gray-100 rounded-lg border-1 self-baseline ${
         isGridView ? "w-[100%] lg:w-[32%] md:w-[48%] sm:w-[100%]" : "w-[100%]"
       }`}
     >
