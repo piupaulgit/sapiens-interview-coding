@@ -39,7 +39,7 @@ const UserList: React.FC = () => {
             Add User
           </Link>
           {users.length > 0 && (
-            <button onClick={toggleView} className="flex gap-2">
+            <button onClick={toggleView} className="hidden gap-2 md:flex">
               <span
                 className={`p-2 ${
                   isGridView ? "bg-gray-400 text-white" : "bg-gray-200"
@@ -88,9 +88,9 @@ const UserList: React.FC = () => {
       {error && <Notification message={error}></Notification>}
       {users.length > 0 ? (
         <div
-          className={`flex overflow-scroll h-[75vh] ${
+          className={`flex overflow-scroll h-[75vh]  ${
             isGridView ? "flex-wrap" : "flex-col"
-          } gap-3 justify-start`}
+          } gap-y-3 justify-between content-start`}
         >
           {users.map((user: IUser) => {
             return (
